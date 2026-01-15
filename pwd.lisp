@@ -79,7 +79,7 @@
   :feed "https://ktross.com/rss.xml"
   :about "https://ktross.com/"
   :hnuid "ktross"
-  :bio "Software Engineer. Interested in DevOps, DevEx, and a variety of programming languages.")
+  :bio "Software Engineer.  Interested in DevOps, DevEx and programming languages.")
 
  (:name "Matteo"
   :site "https://xnacly.me/"
