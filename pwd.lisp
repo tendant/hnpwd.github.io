@@ -119,6 +119,13 @@
   :hnuid "ciju"
   :bio "Building mental models around programming, finance and other topics.")
 
+ (:name "Damian Walsh"
+  :site "https://damianwalsh.co.uk/"
+  :blog "https://damianwalsh.co.uk/posts/"
+  :feed "https://damianwalsh.co.uk/feed.xml"
+  :hnuid "damianwalsh"
+  :bio "I'm Damian, a designer based in Manchester, UK.")
+
  (:name "Dennis Silin"
   :site "https://marscalendar.space/"
   :about "https://marscalendar.space/about.html"
