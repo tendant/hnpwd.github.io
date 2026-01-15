@@ -28,6 +28,13 @@
   :hnuid "gigatexal"
   :bio "Writes about computers and technology.")
 
+ (:name "Alex Tiniuc"
+  :site "https://tiniuc.com/"
+  :feed "https://tiniuc.com/atom.xml"
+  :about "https://tiniuc.com/about-me/"
+  :hnuid "tiniuclx"
+  :bio "Embedded software engineer, musician and game developer.")
+ 
  (:name "Andrew Montalenti"
   :site "https://amontalenti.com/"
   :feed "https://amontalenti.com/feed"
