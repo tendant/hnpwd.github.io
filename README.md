@@ -42,10 +42,12 @@ requesting its inclusion in the directory:
     Medium or Substack do not qualify.
 
  2. The website must contain substantive content such as articles,
-    blog posts, projects or games developed by the author.  This
-    requirement helps keep the directory interesting and meaningful,
-    and prevents it from becoming a collection of minimal or
-    placeholder websites with little value to the community.
+    blog posts, projects or games developed by the author.  Websites
+    that consist only of a CV or portfolio are not suitable for
+    inclusion in our directory.  This requirement helps keep the
+    directory interesting and meaningful, and prevents it from
+    becoming a collection of minimal or placeholder websites with
+    little value to the community.
 
 
 ### Add
