@@ -25,6 +25,11 @@
   (< (length (remove-duplicates items :test #'equal))
      (length items)))
 
+(defun string-starts-with-p (prefix string)
+  "Check if the given string starts with the given prefix."
+  (and (<= (length prefix) (length string))
+       (string= prefix string :end2 (length prefix))))
+
 (defun weekday-name (weekday-index)
   "Given an index, return the corresponding day of week."
   (nth weekday-index '("Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun")))
@@ -59,7 +64,7 @@
       (setf prev-name curr-name))
     (reverse errors)))
 
-(defun validate-bio-text (items)
+(defun validate-bio-texts (items)
   "Check that bio entries look good."
   (let ((max-len 80)
         (bio)
@@ -93,10 +98,21 @@
                     (getf item :name)) errors)))
     (reverse errors)))
 
+(defun validate-hn-uids (items)
+  "Check that HN user IDs are not links."
+  (let ((errors))
+    (dolist (item items)
+      (when (or (position #\: (getf item :hnuid))
+                (position #\. (getf item :hnuid)))
+        (push (fstr "~a: HNUID must be just the HN username"
+                    (getf item :name)) errors)))
+    (reverse errors)))
+
 (defun validate (items)
   (let ((errors (append (validate-name-order items)
-                        (validate-bio-text items)
-                        (validate-unique-urls items))))
+                        (validate-bio-texts items)
+                        (validate-unique-urls items)
+                        (validate-hn-uids items))))
     (when (consp errors)
       (loop for error in errors
             do (format *error-output* "ERROR: ~a~%" error))
@@ -151,7 +167,7 @@
   (let* ((host-start (+ (search "://" url) 3))
          (host-end (position #\/ url :start host-start))
          (host (subseq url host-start host-end)))
-    (when (and (>= (length host) 4) (string= host "www." :end1 4))
+    (when (string-starts-with-p "www." host)
       (setf host (subseq host 4)))
     host))
 
